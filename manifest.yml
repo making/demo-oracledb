@@ -11,3 +11,6 @@ applications:
     JBP_CONFIG_OPEN_JDK_JRE: '{jre: {version: 11.+}}'
     JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
     SPRING_PROFILES_ACTIVE: cloud
+    SPRING_DATASOURCE_USERNAME: ${vcap.services.demo-db.credentials.username}
+    SPRING_DATASOURCE_PASSWORD: ${vcap.services.demo-db.credentials.password}
+    SPRING_DATASOURCE_URL: ${vcap.services.demo-db.credentials.jdbcUrl}

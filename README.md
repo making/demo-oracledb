@@ -25,15 +25,30 @@ $ curl http://localhost:8080/actuator/health
 
 ### How to deploy to Cloud Foundry
 
+#### Connection Type: SID
+
 ```
-cf create-service credhub default demo-db -c '{"url":"oracle://<username>:<password>@<hostname>:<port>/<sid>"}'
+cf create-service credhub default demo-db -c '{"username":"<username>", "password":"password", "jdbcUrl":"jdbc:oracle:thin:@<hostname>:<port>:<sid>"}'
 ```
 
 or 
 
 ```
-cf create-user-provided-service demo-db -p '{"url":"oracle://<username>:<password>@<hostname>:<port>/<sid>"}'
+cf create-user-provided-service demo-db -p '{"username":"<username>", "password":"password", "jdbcUrl":"jdbc:oracle:thin:@<hostname>:<port>:<sid>"}'
 ```
+#### Connection Type: Service Name
+
+```
+cf create-service credhub default demo-db -c '{"username":"<username>", "password":"password", "jdbcUrl":"jdbc:oracle:thin:@//<hostname>:<port>/<servicename>"}'
+```
+
+or 
+
+```
+cf create-user-provided-service demo-db -p '{"username":"<username>", "password":"password", "jdbcUrl":"jdbc:oracle:thin:@//<hostname>:<port>/<servicename>"}'
+```
+
+then,
 
 ```
 cf push -p demo-oracledb-0.0.1-*.jar	
