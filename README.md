@@ -28,24 +28,24 @@ $ curl http://localhost:8080/actuator/health
 #### Connection Type: SID
 
 ```
-cf create-service credhub default demo-db -c '{"username":"<username>", "password":"password", "jdbcUrl":"jdbc:oracle:thin:@<hostname>:<port>:<sid>"}'
+cf create-service credhub default demo-db -c '{"username":"<username>", "password":"<password>", "jdbcUrl":"jdbc:oracle:thin:@<hostname>:<port>:<sid>"}'
 ```
 
 or 
 
 ```
-cf create-user-provided-service demo-db -p '{"username":"<username>", "password":"password", "jdbcUrl":"jdbc:oracle:thin:@<hostname>:<port>:<sid>"}'
+cf create-user-provided-service demo-db -p '{"username":"<username>", "password":"<password>", "jdbcUrl":"jdbc:oracle:thin:@<hostname>:<port>:<sid>"}'
 ```
 #### Connection Type: Service Name
 
 ```
-cf create-service credhub default demo-db -c '{"username":"<username>", "password":"password", "jdbcUrl":"jdbc:oracle:thin:@//<hostname>:<port>/<servicename>"}'
+cf create-service credhub default demo-db -c '{"username":"<username>", "password":"<password>", "jdbcUrl":"jdbc:oracle:thin:@//<hostname>:<port>/<servicename>"}'
 ```
 
 or 
 
 ```
-cf create-user-provided-service demo-db -p '{"username":"<username>", "password":"password", "jdbcUrl":"jdbc:oracle:thin:@//<hostname>:<port>/<servicename>"}'
+cf create-user-provided-service demo-db -p '{"username":"<username>", "password":"<password>", "jdbcUrl":"jdbc:oracle:thin:@//<hostname>:<port>/<servicename>"}'
 ```
 
 then,
