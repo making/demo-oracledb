@@ -51,5 +51,6 @@ cf create-user-provided-service demo-db -p '{"username":"<username>", "password"
 then,
 
 ```
+https://raw.githubusercontent.com/making/demo-oracledb/master/manifest.yml
 cf push -p demo-oracledb-0.0.1-*.jar	
 ```
